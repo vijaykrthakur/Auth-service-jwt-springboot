@@ -12,7 +12,7 @@ import com.Auth.entity.User;
 @Mapper(componentModel = "spring")
 public interface UserMapper {
 
-	 @Mapping(target = "password", ignore = true)
-	    @Mapping(target = "roles", ignore = true)
+	// @Mapping(target = "password", ignore = true)
+	  //  @Mapping(target = "roles", ignore = true)
 	    User toEntity(RegisterRequest dto);
 }
