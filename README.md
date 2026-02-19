@@ -134,22 +134,34 @@ Example:
 
 ```yaml
 server:
-  port: 8080
+  port: 8383
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/authdb
-    username: root
-    password: root
+    url: jdbc:postgresql://db.niyuhzarepgjzjtjcczf.supabase.co:5432/postgres
+    username: postgres
+    password: ******
+    driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
 
 jwt:
-  secret: your_secret_key_here
-  expiration: 3600000
+  secret: mySuperSecretKeyForJwtTokenDontHardcode123456
+  access-token-expiration: 900000
+  refresh-token-expiration: 604800000
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+
 ```
 
 ---
